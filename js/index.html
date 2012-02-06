@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <meta charset="gbk">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>统计终结器2.1</title>
+    <link href="css/common.css" type="text/css" rel="stylesheet"/>
+    <link href="css/main.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="js/sea.js"></script>
+    <script type="text/javascript" src="js/func2.js"></script>
+</head>
+<body>
+<div class="wrap">
+    <div class="cont">
+        <div class="list">
+            <label class="list-index">序号</label>
+            <ul class="list-detail"></ul>
+        </div>
+    </div>
+</div>
+<!--=S item -->
+<script type="text/template" id="ps-item">
+    <strong class="name" id="{{id}}">{{name}}</strong>
+    <a href="javascript:;" class="btn green{{^join}} off{{/join}}"><span>参加</span></a>
+    <a href="javascript:;" class="btn red{{^busy}} off{{/busy}}"><span>有事</span></a>
+    <a href="javascript:;" class="btn ora{{^dinner}} off{{/dinner}}"><span>一起吃晚饭</span></a>
+    {{#getPs}}<span class="ps-busy"><samp>(</samp><em>PS:{{#isAche}}{{ps}}{{/isAche}}</em><samp>)</samp></span>{{/getPs}}
+</script>
+<!--=== ps 弹窗==-->
+<script type="text/template" id="ps-win">
+    <div class="win-pop">
+        <div class="win-cont">
+            <dl>
+                <dt>纳尼？！你丫竟然有事，啥事说来听听</dt>
+                <dd>
+                    <textarea class="ps-reason" placeholder="{{val}}" style="height:59px;">{{val}}</textarea>
+                    <a href="javascript:;" class="ps-cancel" title="待考虑...">再考虑一下，呵呵</a>
+                    <a href="javascript:;" class="ps-submit">求批准</a>
+                </dd>
+            </dl>
+        </div>
+    </div>
+</script>
+</body>
+</html>
